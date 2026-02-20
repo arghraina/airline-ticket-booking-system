@@ -2,9 +2,9 @@ const {airplaneService} =  require('../services')
 
 async function createAirplane(req, res) {
     try{
+        console.log(req.body);
         const airplane = await airplaneService.createAirplane({
-            model_number: req.body.modelNumber,
-
+            modelNumber: req.body.modelNumber,
             capacity: req.body.capacity
         })
         return res.json({
